@@ -1,0 +1,104 @@
+{
+	"name": "mems",
+	"version": "1.0.0",
+	"author": {
+		"name": "rokki",
+		"email": "tasteink@proton.me",
+		"url": "https://github.com/tasteee"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/tasteee/mems.git"
+	},
+	"main": "./dist/mems.cjs",
+	"module": "./dist/mems.esm.js",
+	"jsdelivr": "./dist/mems.iife.js",
+	"exports": {
+		".": {
+			"require": "./dist/mems.cjs",
+			"import": "./dist/mems.esm.js",
+			"types": "./dist/mems.d.ts"
+		},
+		"./dist/": {
+			"import": "./dist/",
+			"require": "./dist/",
+			"types": "./dist/"
+		}
+	},
+	"scripts": {
+		"dev": "vite --host",
+		"build": "vite build",
+		"postbuild": "dts-bundle-generator --config ./dts-bundle-generator.config.ts",
+		"test": "vitest",
+		"test:coverage": "vitest --coverage",
+		"format": "prettier . --write",
+		"upgrade": "upgradeps",
+		"release": "npm run build && np"
+	},
+	"bugs": {
+		"url": "https://github.com/tasteee/mems/issues"
+	},
+	"description": "a memoization utility",
+	"files": [
+		"dist",
+		"README.md",
+		"LICENSE.md",
+		"CHANGELOG.md",
+		"src",
+		"package.json"
+	],
+	"funding": [
+		{
+			"type": "individual",
+			"url": "https://support.example.com"
+		}
+	],
+	"homepage": "https://github.com/tasteee/mems#readme",
+	"keywords": [
+		"some",
+		"keywords"
+	],
+	"license": "MIT",
+	"private": false,
+	"sponsor": {
+		"url": "https://x.com/ken_wheeler"
+	},
+	"type": "module",
+	"types": "./dist/mems.d.ts",
+	"typesVersions": {
+		"*": {
+			"*": [
+				"./dist/mems.d.ts"
+			]
+		}
+	},
+	"typings": "./dist/mems.d.ts",
+	"devDependencies": {
+		"@types/jsdom": "^21.1.7",
+		"@types/node": "^22.5.0",
+		"@types/react": "^18.0.0",
+		"@types/react-dom": "^18.0.0",
+		"@vitest/coverage-v8": "^2.0.5",
+		"dts-bundle-generator": "^9.5.1",
+		"jsdom": "^24.1.1",
+		"lint-staged": "^15.2.9",
+		"np": "^10.0.6",
+		"prettier": "^3.3.3",
+		"react": "^18.0.0",
+		"react-dom": "^18.0.0",
+		"terser": "^5.31.1",
+		"ts-node": "^10.9.2",
+		"typescript": "^5.3.3",
+		"upgradeps": "^2.0.6",
+		"vite": "^5.0.12",
+		"vitest": "^2.0.0"
+	},
+	"peerDependencies": {
+		"react": "^18.0.0",
+		"react-dom": "^18.0.0"
+	},
+	"dependencies": {
+		"fast-equals": "^5.0.1",
+		"just-safe-get": "^4.2.0"
+	}
+}
